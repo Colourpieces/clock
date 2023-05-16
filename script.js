@@ -30,3 +30,6 @@ function makeTimeBinary(time) {
   }
   return timeBinary;
 }
+
+const root = document.querySelector(":root");
+root.style.setProperty("--clr-red", pred);

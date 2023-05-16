@@ -1,3 +1,9 @@
+:root {
+  --degrees-hour: 0;
+  --degrees-minutes: 90;
+  --degrees-seconds: 180;
+}
+
 html {
   font-family: "Courier New", Courier, monospace;
 }
@@ -28,6 +34,50 @@ main {
 
   width: 40vmin;
   aspect-ratio: 1;
+
+  position: relative;
+}
+
+.clock-analog_minute-hand {
+  /* Minutenzeiger */
+  background-color: black;
+  background-image: linear-gradient(90deg, orange 50%, purple 50%);
+  height: 0.3rem;
+  width: 10rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(var(--degrees-minutes));
+  transform-origin: 0% 50%;
+}
+
+.clock-analog_hour-hand {
+  /* Stundenzeiger */
+  background-color: black;
+  background-image: linear-gradient(90deg, red 50%, blue 50%);
+  height: 0.3rem;
+  width: 6rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(var(--degrees-hour));
+  transform-origin: 0% 50%;
+}
+
+.clock-analog_second-hand {
+  /* Sekundenzeiger */
+  background-color: black;
+  background-image: linear-gradient(90deg, green 50%, purple 50%);
+  height: 0.2rem;
+  width: 10rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(var(--degrees-seconds));
+  transform-origin: 0% 50%;
 }
 
 .clock-digital {
