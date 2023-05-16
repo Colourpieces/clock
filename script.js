@@ -1,10 +1,19 @@
+const root = document.querySelector(":root");
 const displayDigitalTime = document.querySelector("#display-clock-digital");
-function showDigitalTime() {
+
+function setTime() {
   const now = new Date();
   const hours = now.getHours();
   const minutes = now.getMinutes();
   const seconds = now.getSeconds();
 
+  //analog time
+  root.style.setProperty("--degrees-hours", hours);
+  root.style.setProperty("--degrees-minutes", minutes);
+  root.style.setProperty("--degrees-seconds", seconds);
+  //console.log(root.getAttribute("style"));
+
+  //digital time
   const hoursBinary = makeTimeBinary(hours);
   const minutesBinary = makeTimeBinary(minutes);
   const secondsBinary = makeTimeBinary(seconds);
@@ -18,9 +27,6 @@ function showDigitalTime() {
   }
 }
 
-// update time every 1000 ms (= 1 second)
-const intervalID = setInterval(showDigitalTime, 1000);
-
 function makeTimeBinary(time) {
   let timeBinary = "";
   if (time < 10) {
@@ -31,5 +37,5 @@ function makeTimeBinary(time) {
   return timeBinary;
 }
 
-const root = document.querySelector(":root");
-root.style.setProperty("--clr-red", pred);
+// update time every 1000 ms (= 1 second)
+const intervalID = setInterval(setTime, 1000);
