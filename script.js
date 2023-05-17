@@ -1,5 +1,3 @@
-const root = document.querySelector(":root");
-
 function setTime() {
   const now = new Date();
   const hours = now.getHours();
@@ -12,6 +10,8 @@ function setTime() {
   //digital time
   displayDigitalTimeString(hours, minutes, seconds);
 }
+
+const root = document.querySelector(":root");
 
 function displayAnalogTime(hours, minutes, seconds) {
   root.style.setProperty(
@@ -30,6 +30,7 @@ function displayAnalogTime(hours, minutes, seconds) {
 }
 
 const displayDigitalTime = document.querySelector("#display-clock-digital");
+
 function displayDigitalTimeString(hours, minutes, seconds) {
   const separator = seconds % 2 === 0 ? ":" : " "; //tenärer Ausdruck: Bedingung ? wenn true : wenn false
   hours = makeTimeBinary(hours); //Parameter werden überschrieben, nicht das original!
