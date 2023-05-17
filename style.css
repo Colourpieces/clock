@@ -26,7 +26,13 @@ main {
 .dial {
   /*Zifferblatt*/
   background-color: white;
-  background: radial-gradient(circle, black 5%, white 5%);
+  background-image: radial-gradient(circle, black 4%, transparent 4%),
+    linear-gradient(transparent 49%, lightgrey 49%, transparent 50%),
+    linear-gradient(30deg, transparent 49%, lightgrey 49%, transparent 50%),
+    linear-gradient(60deg, transparent 49%, lightgrey 49%, transparent 50%),
+    linear-gradient(90deg, transparent 49%, lightgrey 49%, transparent 50%),
+    linear-gradient(120deg, transparent 49%, lightgrey 49%, transparent 50%),
+    linear-gradient(150deg, transparent 49%, lightgrey 49%, transparent 50%);
 
   border-radius: 50%;
   border: 0.25rem solid black;
@@ -40,12 +46,26 @@ main {
   transform: rotate(-90deg);
 }
 
+.clock-inner-dial {
+  background-color: white;
+  background-image: radial-gradient(circle, black 4%, transparent 4%);
+
+  border-radius: 50%;
+
+  width: 90%;
+  aspect-ratio: 1;
+
+  transform-origin: 50% 50%;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
 .clock-analog_minute-hand {
   /* Minutenzeiger */
   background-color: black;
-  background-image: linear-gradient(90deg, orange 50%, purple 50%);
-  height: 0.3vmin;
-  width: 10vmin;
+  background-image: linear-gradient(90deg, black 70%, gold 90%);
+  height: 0.6vmin;
+  width: 43%;
 
   position: absolute;
   top: 50%;
@@ -60,9 +80,9 @@ main {
 .clock-analog_hour-hand {
   /* Stundenzeiger */
   background-color: black;
-  background-image: linear-gradient(90deg, red 50%, blue 50%);
-  height: 0.3vmin;
-  width: 6vmin;
+  background-image: linear-gradient(90deg, black 70%, blue 90%);
+  height: 0.6vmin;
+  width: 20%;
 
   position: absolute;
   top: 50%;
@@ -77,9 +97,9 @@ main {
 .clock-analog_second-hand {
   /* Sekundenzeiger */
   background-color: black;
-  background-image: linear-gradient(90deg, green 50%, purple 50%);
+  background-image: linear-gradient(90deg, black 70%, orange 90%);
   height: 0.2vmin;
-  width: 10vmin;
+  width: 43%;
 
   position: absolute;
   top: 50%;

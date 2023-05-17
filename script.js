@@ -1,5 +1,4 @@
 const root = document.querySelector(":root");
-const displayDigitalTime = document.querySelector("#display-clock-digital");
 
 function setTime() {
   const now = new Date();
@@ -8,6 +7,13 @@ function setTime() {
   const seconds = now.getSeconds();
 
   //analog time
+  displayAnalogTime(hours, minutes, seconds);
+
+  //digital time
+  displayDigitalTimeString(hours, minutes, seconds);
+}
+
+function displayAnalogTime(hours, minutes, seconds) {
   root.style.setProperty(
     "--degrees-hours",
     Math.floor((hours * 360) / 12) + "deg"
@@ -21,15 +27,12 @@ function setTime() {
     Math.floor((seconds * 360) / 60) + "deg"
   );
   //console.log(root.getAttribute("style"));
-
-
-  //digital time
-  displayDigitalTimeString(hours, minutes, seconds);
 }
 
+const displayDigitalTime = document.querySelector("#display-clock-digital");
 function displayDigitalTimeString(hours, minutes, seconds) {
-  const separator = seconds % 2 === 0 ? ":" : " ";
-  hours = makeTimeBinary(hours);
+  const separator = seconds % 2 === 0 ? ":" : " "; //tenärer Ausdruck: Bedingung ? wenn true : wenn false
+  hours = makeTimeBinary(hours); //Parameter werden überschrieben, nicht das original!
   minutes = makeTimeBinary(minutes);
   seconds = makeTimeBinary(seconds);
 
@@ -38,7 +41,7 @@ function displayDigitalTimeString(hours, minutes, seconds) {
 }
 
 function makeTimeBinary(time) {
-  // return time < 10 ? "0" + time : time.toString();
+  // return time < 10 ? "0" + time : time.toString(); //tenärer Ausdruck
 
   // return ("0" + time.toString()).slice(-2)
 
@@ -52,4 +55,4 @@ function makeTimeBinary(time) {
 }
 
 // update time every 1000 ms (= 1 second)
-const intervalID = setInterval(setTime, 1000);
+const interval = setInterval(setTime, 1000);
