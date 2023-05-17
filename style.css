@@ -1,5 +1,5 @@
 :root {
-  --degrees-hour: 0;
+  --degrees-hours: 0;
   --degrees-minutes: 90;
   --degrees-seconds: 180;
 }
@@ -36,18 +36,21 @@ main {
   aspect-ratio: 1;
 
   position: relative;
+
+  transform: rotate(-90deg);
 }
 
 .clock-analog_minute-hand {
   /* Minutenzeiger */
   background-color: black;
   background-image: linear-gradient(90deg, orange 50%, purple 50%);
-  height: 0.3rem;
-  width: 10rem;
+  height: 0.3vmin;
+  width: 10vmin;
 
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: rotate(0deg);
   transform: rotate(var(--degrees-minutes));
   transform-origin: 0% 50%;
 }
@@ -56,13 +59,14 @@ main {
   /* Stundenzeiger */
   background-color: black;
   background-image: linear-gradient(90deg, red 50%, blue 50%);
-  height: 0.3rem;
-  width: 6rem;
+  height: 0.3vmin;
+  width: 6vmin;
 
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: rotate(var(--degrees-hour));
+  transform: rotate(0deg);
+  transform: rotate(var(--degrees-hours));
   transform-origin: 0% 50%;
 }
 
@@ -70,12 +74,13 @@ main {
   /* Sekundenzeiger */
   background-color: black;
   background-image: linear-gradient(90deg, green 50%, purple 50%);
-  height: 0.2rem;
-  width: 10rem;
+  height: 0.2vmin;
+  width: 10vmin;
 
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: rotate(0deg);
   transform: rotate(var(--degrees-seconds));
   transform-origin: 0% 50%;
 }
