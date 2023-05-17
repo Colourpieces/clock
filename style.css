@@ -50,8 +50,10 @@ main {
   position: absolute;
   top: 50%;
   left: 50%;
+
   transform: rotate(0deg);
   transform: rotate(var(--degrees-minutes));
+
   transform-origin: 0% 50%;
 }
 
@@ -65,8 +67,10 @@ main {
   position: absolute;
   top: 50%;
   left: 50%;
+
   transform: rotate(0deg);
   transform: rotate(var(--degrees-hours));
+
   transform-origin: 0% 50%;
 }
 
@@ -80,8 +84,10 @@ main {
   position: absolute;
   top: 50%;
   left: 50%;
+
   transform: rotate(0deg);
   transform: rotate(var(--degrees-seconds));
+
   transform-origin: 0% 50%;
 }
 

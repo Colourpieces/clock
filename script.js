@@ -22,6 +22,7 @@ function setTime() {
   );
   //console.log(root.getAttribute("style"));
 
+
   //digital time
   displayDigitalTimeString(hours, minutes, seconds);
 }
